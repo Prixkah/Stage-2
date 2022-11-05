@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api:
+    image: prixkah/stage2_backend:latest     
+    ports:
+      - "8000:8000"
+
+  web:
+    image: prixkah/stage2_frontend:latest 
+    depends_on:
+      - api    
+    ports:
+      - "3000:3000"
